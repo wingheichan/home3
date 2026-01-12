@@ -1,0 +1,37 @@
+{
+  "Formidable": {
+    "Marche 15_1": [
+      { "a": "j'ai envie de", "b": "ik heb zin in" },
+      { "a": "je recois", "b": "ik ontvang" },
+      { "a": "je me souviens de", "b": "ik herinner me" },
+      { "a": "je serai(etre)", "b": "ik zal zijn" },
+      { "a": "j'aurai(avoir)", "b": "ik zal hebben" },
+      { "a": "je ferai(faire)", "b": "ik zal doen/maken" },
+      { "a": "l'effort(M)", "b": "de moeite" },
+      { "a": "la route", "b": "de weg" },
+      { "a": "le plaisir", "b": "het plezier" },
+      { "a": "le chagrin", "b": "het verdriet" },
+      { "a": "le service", "b": "de dienst" },
+      { "a": "ne..ni..ni", "b": "geen-ook geen" },
+      { "a": "ne..pas encore", "b": "nog niet" },
+      { "a": "le mot","b": "het woord" }
+    ],
+  "Marche 15_2": [
+      { "a": "le rendez-vous", "b": "de afspraak" },
+      { "a": "important", "b": "belangrijk" },
+      { "a": "gentil-gentille", "b": "aardig" },
+      { "a": "parfait", "b": "perfect" },
+      { "a": "bonsoir", "b": "goedenavond" },
+      { "a": "d'abord", "b": "ten eerste" },
+      { "a": "ensuite", "b": "vervolgens" },
+      { "a": "finalement", "b": "tenslotte" },
+      { "a": "ne..pas", "b": "niet-geen" },
+      { "a": "ne..plus", "b": "niet meer" },
+      { "a": "ne..rien", "b": "niets" },
+      { "a": "ne..nulle part", "b": "nergens" },
+      { "a": "ne..personne", "b": "niemand " },
+      { "a": "ne..aucun(e)", "b": "geen enkele" },
+      { "a": "ne..jamais","b": "nooit" }
+    ]
+  }
+}

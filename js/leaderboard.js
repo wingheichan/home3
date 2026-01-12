@@ -1,0 +1,11 @@
+
+(function(){
+  const $ = s=>document.querySelector(s); const wrap = $('#lbWrap');
+  function parseStorage(){ const store={}; for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(!k) continue; let g=null; if(k.startsWith('quiz:')) g='Quiz'; else if(k.startsWith('memory:')) g='Memory'; else if(k.startsWith('cloze:')) g='Cloze'; else if(k.startsWith('sudoku:')) g='Sudoku'; else if(k.startsWith('wordsearch:')) g='Word Search'; else continue; try{ const v=JSON.parse(localStorage.getItem(k)); (store[g] ||= []).push({ key:k, value:v }); }catch(e){} } return store; }
+  function fmt(ms){ const s=Math.floor(ms/1000), m=Math.floor(s/60), ss=s%60; return `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`; }
+  function render(){ const data=parseStorage(); const groups=Object.keys(data); if(!groups.length){ wrap.innerHTML='<p>No results yet.</p>'; return; } wrap.innerHTML = groups.map(g=>{ const rows=data[g].map(r=>{ const label=r.key.split(':').slice(1).join(' › '); const v=r.value; let stat=''; if(g==='Quiz') stat=`Score: ${v.score} — Time: ${fmt(v.ms)}`; else if(g==='Memory') stat=`Best time: ${fmt(v.ms)} — Moves: ${v.moves}`; else if(g==='Cloze') stat=`Correct: ${v.right} — Time: ${fmt(v.ms)}`; else if(g==='Sudoku') stat=`Best time: ${fmt(v.ms)}`; else if(g==='Word Search') stat=`Best time: ${fmt(v.ms)}`; return `<tr><td>${label}</td><td>${stat}</td></tr>`; }).join(''); return `<h2>${g}</h2><table class="table"><thead><tr><th>Category</th><th>Best</th></tr></thead><tbody>${rows}</tbody></table>`; }).join(''); }
+  document.getElementById('lbRefresh').addEventListener('click', render);
+  document.getElementById('lbClear').addEventListener('click', ()=>{ if(confirm('Clear all leaderboard entries?')){ ['quiz:','memory:','cloze:','sudoku:','wordsearch:'].forEach(pref=>{ for(let i=localStorage.length-1;i>=0;i--){ const k=localStorage.key(i); if(k && k.startsWith(pref)) localStorage.removeItem(k); } }); render(); } });
+  document.getElementById('lbExport').addEventListener('click', ()=>{ const blob=new Blob([JSON.stringify(parseStorage(),null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='leaderboard.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),500); });
+  render();
+})();
