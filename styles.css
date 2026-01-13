@@ -317,3 +317,53 @@ select {
 }
 
 
+/* ===== Game 6 7: multi-answer grid ===== */
+.sixseven .prompt {
+  white-space: pre-wrap;  /* supports \n from JSON; wraps long prompts gracefully */
+  word-break: break-word;
+  margin-bottom: 10px;
+}
+
+.sixseven .multi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* two columns of labeled inputs */
+  gap: 10px;
+}
+
+.sixseven .multi-row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.sixseven .multi-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+/* Feedback colors per input */
+.sixseven .multi-input.correct {
+  background: #dcfce7;     /* light green */
+  border-color: #16a34a;
+  color: #065f46;
+}
+.sixseven .multi-input.wrong {
+  background: #fee2e2;     /* light red */
+  border-color: #dc2626;
+  color: #7f1d1d;
+}
+
+/* Dark mode inputs readable */
+:root.theme-dark .sixseven .multi-input {
+  background: #111827;
+  color: #ffffff;
+  border-color: #334155;
+}
+
+/* Keep Next button spaced */
+.next-row { margin-top: 12px; }
+
