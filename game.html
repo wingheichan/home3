@@ -13,6 +13,7 @@
   <script defer src="js/game-quiz.js"></script>
   <script defer src="js/game-memory.js"></script>
   <script defer src="js/game-cloze.js"></script>
+  <script defer src="js/game-67.js"></script>
 </head>
 <body>
 
@@ -41,6 +42,7 @@
       <button class="seg-btn" data-target="panel-quiz" aria-selected="false">📝 Quiz</button>
       <button class="seg-btn" data-target="panel-memory" aria-selected="false">🧠 Memory</button>
       <button class="seg-btn" data-target="panel-cloze" aria-selected="false">✍️ Fill in</button>
+      <button class="seg-btn" data-target="panel-sixseven" aria-selected="false">🔢 6 7</button>
     </div>
     
     <section id="panel-quiz" class="top-panel card" role="tabpanel">
@@ -100,6 +102,30 @@
       </div>
       <div id="clozeWrap"></div>
     </section>
+    
+<section id="panel-sixseven" class="top-panel card" role="tabpanel">
+  <h1>Game 6 7</h1>
+  <div class="hud">
+    <span class="pill"><span class="label">Time</span> <strong id="sixSevenTime">00:00</strong></span>
+    <span class="pill"><span class="label">Correct</span> <strong id="sixSevenCorrect">0</strong></span>
+    <span class="pill"><span class="label">Score</span> <strong id="sixSevenScore">0</strong></span>
+    <span class="pill"><span class="label">Highscore</span> <strong id="sixSevenHigh">0</strong></span>
+  </div>
+  <div class="controls">
+    <label>Mode
+      <select id="sixSevenMode">
+        <option value="6">Mode 6 (six answers)</option>
+        <option value="7">Mode 7 (seven answers)</option>
+      </select>
+    </label>
+    <label>Category <select id="sixSevenCat"></select></label>
+    <label>Subcategory <select id="sixSevenSub"></select></label>
+    <button id="sixSevenPreview" class="btn">Preview</button>
+    <button id="sixSevenStart" class="btn btn-primary">Start</button>
+  </div>
+  <div id="sixSevenWrap"></div>
+</section>
+
   </div>
 </main>
 <script>
