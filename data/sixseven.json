@@ -1,0 +1,24 @@
+
+{
+  "Language": {
+    "Spanish Numbers": [
+      {
+        "prompt": "Write the Spanish words for numbers 1–6 (mode 6) or 1–7 (mode 7)",
+        "answers6": ["uno", "dos", "tres", "cuatro", "cinco", "seis"],
+        "answers7": ["uno", "dos", "tres", "cuatro", "cinco", "seis", "siete"]
+      },
+      {
+        "prompt": "Write the Spanish words for days Monday–Saturday (mode 6) or Monday–Sunday (mode 7)",
+        "answers6": ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+        "answers7": ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
+      }
+    ],
+    "French Colors": [
+      {
+        "prompt": "Write French color names (choose 6 or 7)",
+        "answers6": ["rouge", "bleu", "vert", "jaune", "noir", "blanc"],
+        "answers7": ["rouge", "bleu", "vert", "jaune", "noir", "blanc", "orange"]
+      }
+    ]
+  }
+}
